@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Indie Flower';
+    background-color: #f8f8f6;
+}
+
+
+/*Ranking usuarios*/
+
+.title{
+    text-align: center;
+    color: #0c9666;
+    font-size:30px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.ranking-container{ /*Contenedor ranking*/
+    display:flex;
+    height:80vh;
+    justify-content: center;
+    overflow: auto;
+}
+
+.ranking{ /*Div con todos los usuarion en el ranking*/
+    width:60%;
+    min-width:450px;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    margin-left:5%;
+    overflow: auto;
+
+}
+
+.ranking-user{ /*Div con los datos de cada usuario, dentro de .ranking*/
+    width:90%;
+    flex-basis: 60px;
+    min-height:60px;
+    background-color: white;
+    border:1px solid black;
+    border-radius: 7px;
+    align-self: center;
+    margin-bottom: 10px;
+    display: flex;
+    overflow: hidden;
+    padding:5px;
+
+}
+
+.ranking-number{ /*Div con el puesto del ranking*/
+    width:5%;
+    background-color: white;
+    height:100%;
+    flex-grow:0.5;
+    align-self:center;
+    justify-content: center;
+    display: flex;
+}
+
+.ranking-name{ /*Div con el autor de la experiencia en el ranking*/
+    width:75%;
+    background-color: white;
+    height:100%;
+    flex-grow:7;
+    justify-content: center;
+    align-self:center;
+    display:flex;
+}
+
+.ranking-name p{
+    margin-left:10%;
+}
+
+.ranking-likes{ /*Div con el numero de likes de la experiencia en el ranking*/
+    width:20%;
+    background-color: white;
+    height:100%;
+    flex-grow:1;
+    align-self:center;
+    display: flex;
+    justify-content: center;
+    gap:5px;
+}
+
+.ranking-heart{ /*Div con el icono de corazon en el ranking*/
+    background-color: white;
+    height:100%;
+    flex-grow:0.5;
+    align-self:center;
+    justify-content: center;
+    display: flex;
+}
+
+.ranking-heart img{ /*Foto corazon*/
+    width:30px;
+    align-self:center;
+}
+
+.ranking p{ /*Texto*/
+    background-color: white;
+    align-self:center;
+    font-size: 24px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .ranking{
+        margin-left:0;
+    }
+    .ranking-user{
+        min-height:50px;
+    }
+  }
