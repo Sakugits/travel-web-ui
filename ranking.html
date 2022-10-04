@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<html>
+    <link rel="stylesheet" href="style/ranking.css">
+    <link rel="stylesheet" href="style/main.css">
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="json/base_Datos.js"></script>
+    <script type="text/javascript" src="script/script.js"></script>
+    <script type="text/javascript" src="script/jquery_web.js"></script>
+    <title>Practica 4</title>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Indie Flower' rel='stylesheet'>
+    
+</head>
+<body onload="Most_Liked_Users()">
+    <!--header-->
+    <header>
+        <div class="nav">
+            <div class="left-nav">
+                <img src=images/logo.png alt="logo empresa">
+            </div>
+            <div class="center-nav">
+                <a href="Planificar.html">PLANIFICADOR</a>
+                <a href="index.html" id="home">HOME</a>
+                <div class="ranking-nav">
+                    <ul>
+                        <li><a href="ranking.html">RANKING</a></li>
+                        <li><a href="ranking.html">USUARIOS</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-nav-guest">
+                <button id="sign-in">Sign In</button>
+                <button id="register">Registrarse</button>
+            </div>
+            <div class="right-nav-user-container">
+                <div class="right-nav-user">
+                    <div id = "drop-down-icon">
+                        <p>&#8801;</p>
+                    </div>
+                    <div id="user-menu">
+
+                    </div>   
+                    <div id="user-pic">
+                        
+                    </div>
+                    <div id="drop-down-menu">
+                        <div class="menu-new-line">
+                            <a href="myExperiences.html">MIS EXPERIENCIAS</a>
+                        </div>
+                        <div id="menu-logout">
+                            <p>CERRAR SESION</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!--Formulario Log In-->
+        <div class="form-container">
+            <div id="login-form">
+                <form class="form" onsubmit="return false">
+                <div class="form-line">
+                    <div class="close-button">
+                        <input type ="submit" value="&#128473;" id="close-button-login">
+                    </div>
+                </div>
+                <div class="form-line">
+                    <h2>Nombre de Usuario</h2>
+                </div>
+                <div class="form-line">
+                    <label for="username-login" class="sr-only">Nombre de usuario</label>
+                    <input type="text" placeholder = "Nombre..." id="username-login">
+                </div>
+                <div class="form-line">
+                    <h2>Contraseña</h2>
+                </div>
+                <div class="form-line">
+                    <label for="password-login" class="sr-only">Contraseña</label>
+                    <input type="password" placeholder =  "Contraseña" id="password-login">
+                </div>
+                <div class="form-line">
+                    <label for="submit-login" class="sr-only">Iniciar sesión</label>
+                    <input type="submit" value="Iniciar sesión" id="submit-login">
+                </div>
+                <div class="form-line">
+                    <h3>¿No estás registrado?</h3>
+                </div>
+                <div class="form-line">
+                    <div class="last-button">
+                        <label for="register-from-login" class="sr-only">Registrar una cuenta nueva</label>
+                        <input type="submit" value="Crear cuenta" id="register-from-login">
+                    </div>
+                </div>
+    
+                </form>
+            </div>
+        </div>
+        
+        <!--Formulario Register-->
+        <div class="form-container">
+            <div id="register-form">
+                <form class="form" onsubmit="return false">
+
+                    <div class="form-line">
+                        <div class="close-button">
+                            <input type ="submit" value="&#128473;" id="close-button-login">
+                        </div>
+                    </div>
+                    <div class="form-line">
+                        <h2>Nombre de Usuario</h2>
+                    </div>
+                    <div class="form-line">
+                        <label for="username-register" class="sr-only">Nombre de usuario nuevo</label>
+                        <input type="text" placeholder = "Nombre..." id="username-register">
+                    </div>
+                    <div class="form-line">
+                        <h2>Contraseña</h2>
+                    </div>
+                    <div class="form-line">
+                        <label for="password-register" class="sr-only">Contraseña nueva</label>
+                        <input type="password" placeholder =  "Contraseña" id="password-register">
+                    </div>
+                    <div class="form-line">
+                        <h2>Correo electrónico</h2>
+                    </div>
+                    <div class="form-line">
+                        <label for="email-register" class="sr-only">Correo de la cuenta nueva</label>
+                        <input type="text" placeholder = "Correo electrónico (correo@mail.dominio)" id="email-register" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+                    </div>
+                    <div class="form-line">
+                        <h2>Fecha de nacimiento</h2>
+                    </div>
+                    <div class="form-line">
+                        <label for="birthdate-register" class="sr-only">Fecha de nacimiento</label>
+                        <input type="text" placeholder = "Fecha de nacimiento (DD/MM/YYYY)" id="birthdate-register">
+                    </div>
+                    <div class="form-line">
+                        <h2>Foto de perfil</h2>
+                    </div>
+                    <div class="form-line">
+                        <img src="images/profile-logo.png" alt="foto de perfil"></img>
+                    </div>
+                    <div class="form-line">
+                        <input type="url" placeholder="Foto de perfil" id="profile-picture-register" title=" ">
+                    </div>
+                    
+                    <div class="form-line">
+                        <div class="last-button">
+                            <input type="submit" value="Crear cuenta" id="submit-register">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="title">
+            RANKING
+        </div>
+        <div class="ranking-container">
+            <div class="ranking" id = "user-ranking">
+
+               
+
+            </div>
+        </div>
+    </main>
+    <!--footer-->
+    <footer>
+        
+        <div class="footer-1">
+            <h1>viajeszen.es</h1>
+        </div>
+        
+        <div class="footer-2">
+            <a href="https://www.youtube.com"><img src="images/youtube-brands.svg" alt="youtube" style="width: 30px; height: auto;"></a>
+            <a href="https://www.facebook.com"><img src="images/facebook-brands.svg" alt="facebook" style="width: 30px; height: auto;"></a>
+            <a href="https://www.instagram.com"><img src="images/instagram-brands.svg" alt="instagram" style="width: 30px; height: auto;"></a>
+            <a href="https://www.twitter.com"><img src="images/twitter-brands.svg" alt="twitter" style="width: 30px; height: auto;"></a>
+        </div>
+        
+    </footer>
+</body>
+
+</html>

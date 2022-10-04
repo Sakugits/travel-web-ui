@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<html>
+    <link rel="stylesheet" href="style/main.css">
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="json/base_Datos.js"></script>
+    <script type="text/javascript" src="script/script.js"></script>
+    <script type="text/javascript" src="script/jquery_web.js"></script>
+    
+    <title>Practica 4</title>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Indie Flower' rel='stylesheet'>
+</head>
+<body onload="load_Experiences()">
+    <!--Header-->
+    <header>
+        <div class="nav">
+            <div class="left-nav">
+                <img src=images/logo.png alt="logo empresa">
+            </div>
+            <div class="center-nav">
+                <a href="Planificar.html">PLANIFICADOR</a>
+                <a href="index.html" id="home">HOME</a>
+                <div class="ranking-nav">
+                    <ul>
+                        <li><a href="ranking.html">RANKING</a></li>
+                        <li><a href="ranking.html">USUARIOS</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-nav-guest">
+                <button id="sign-in">Sign In</button>
+                <button id="register">Registrarse</button>
+            </div>
+            <div class="right-nav-user-container">
+                <div class="right-nav-user">
+                    <div id = "drop-down-icon">
+                        <p>&#8801;</p>
+                    </div>
+                    <div id="user-menu">
+
+                    </div>   
+                    <div id="user-pic">
+                        
+                    </div>
+                    <div id="drop-down-menu">
+                        <div class="menu-new-line">
+                            <a href="myExperiences.html">MIS EXPERIENCIAS</a>
+                        </div>
+                        <div id="menu-logout">
+                            <p>CERRAR SESION</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!--Formulario Log In-->
+        <div class="form-container">
+            <div id="login-form">
+                <form class="form" onsubmit="return false">
+                <div class="form-line">
+                    <div class="close-button">
+                        <input type ="submit" value="&#128473;" id="close-button-login">
+                    </div>
+                </div>
+                <div class="form-line">
+                    <h2>Nombre de Usuario</h2>
+                </div>
+                <div class="form-line">
+                    <label for="username-login" class="sr-only">Nombre de usuario</label>
+                    <input type="text" placeholder = "Nombre..." id="username-login">
+                </div>
+                <div class="form-line">
+                    <h2>Contraseña</h2>
+                </div>
+                <div class="form-line">
+                    <label for="password-login" class="sr-only">Contraseña</label>
+                    <input type="password" placeholder =  "Contraseña" id="password-login">
+                </div>
+                <div class="form-line">
+                    <label for="submit-login" class="sr-only">Iniciar sesión</label>
+                    <input type="submit" value="Iniciar sesión" id="submit-login">
+                </div>
+                <div class="form-line">
+                    <h3>¿No estás registrado?</h3>
+                </div>
+                <div class="form-line">
+                    <div class="last-button">
+                        <label for="register-from-login" class="sr-only">Registrar una cuenta nueva</label>
+                        <input type="submit" value="Crear cuenta" id="register-from-login">
+                    </div>
+                </div>
+    
+                </form>
+            </div>
+        </div>
+        
+        <!--Formulario Register-->
+        <div class="form-container">
+            <div id="register-form">
+                <form class="form" onsubmit="return false">
+
+                    <div class="form-line">
+                        <div class="close-button">
+                            <input type ="submit" value="&#128473;" id="close-button-login">
+                        </div>
+                    </div>
+                    <div class="form-line">
+                        <h2>Nombre de Usuario</h2>
+                    </div>
+                    <div class="form-line">
+                        <label for="username-register" class="sr-only">Nombre de usuario nuevo</label>
+                        <input type="text" placeholder = "Nombre..." id="username-register">
+                    </div>
+                    <div class="form-line">
+                        <h2>Contraseña</h2>
+                    </div>
+                    <div class="form-line">
+                        <label for="password-register" class="sr-only">Contraseña nueva</label>
+                        <input type="password" placeholder =  "Contraseña" id="password-register">
+                    </div>
+                    <div class="form-line">
+                        <h2>Correo electrónico</h2>
+                    </div>
+                    <div class="form-line">
+                        <label for="email-register" class="sr-only">Correo de la cuenta nueva</label>
+                        <input type="text" placeholder = "Correo electrónico (correo@mail.dominio)" id="email-register" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+                    </div>
+                    <div class="form-line">
+                        <h2>Fecha de nacimiento</h2>
+                    </div>
+                    <div class="form-line">
+                        <label for="birthdate-register" class="sr-only">Fecha de nacimiento</label>
+                        <input type="text" placeholder = "Fecha de nacimiento (DD/MM/YYYY)" id="birthdate-register">
+                    </div>
+                    <div class="form-line">
+                        <h2>Foto de perfil</h2>
+                    </div>
+                    <div class="form-line">
+                        <img src="images/profile-logo.png" alt="foto de perfil"></img>
+                    </div>
+                    <div class="form-line">
+                        <input type="url" placeholder="Foto de perfil" id="profile-picture-register" title=" ">
+                    </div>
+                    
+                    <div class="form-line">
+                        <div class="last-button">
+                            <input type="submit" value="Crear cuenta" id="submit-register">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!--Popup al seleccionar una experiencia-->
+        <div class="form-container">
+            <div id="popup-exp">
+                <form class="form" onsubmit="return false">
+                    <div class="form-line">
+                        <div class="close-button">
+                            <input type ="submit" value="&#128473;" id="close-button-exp">
+                        </div>
+                    </div>
+                    <div class="form-line">
+                        <h1 id = "popup-exp-title">Título</h1>
+                    </div>
+                    <div class="form-line">
+                        <h2><a href="userexperiences.html" onclick = save_User_Creator() id = "popup-exp-author">Creado por Fulanita</a></h2>
+                    </div>
+                    <div class="form-line">
+                        <img id = "popup-exp-pimage" class="main_img" src="images/sauna.jpg" alt="main image of selected experience">
+                    </div>
+                    <div class="form-line">
+                        <p id="popup-exp-description"></p> <!--descripcion-->
+                    </div>
+                    <div class="form-line">
+                        <h2>Fotos y vídeos adicionales</h2>
+                    </div>
+                    <div class="form-line" id="popup-exp-addimg">
+                        <img id="popup-exp-simage1" class="add_img" src="images/playa.jpg" alt="additional image 1">
+                        <img id="popup-exp-simage2" class="add_img" src="images/surfgaming.jpg" alt="additional image 2">
+                    </div>
+                    <div class="form-line">
+                        <h2>Información extra</h2>
+                    </div>
+                    <div class="form-line">
+                        <div class="flecha">
+                            <p id="popup-exp-flecha">&#9660;</p>
+                        </div>
+                    </div>
+                    <div id="popup-exp-extra">
+                        <div class="form-line">
+                            <table>
+                                <tr>
+                                    <th>Requisito</th>
+                                    <th>Descripción</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                                <tr>
+                                    <td>Documentos</td>
+                                    <td id="popup-exp-extra-doc-desc">DNI</td>
+                                    <td id="popup-exp-extra-doc-cant">1</td>
+                                </tr>
+                                <tr>
+                                    <td>Coste</td>
+                                    <td id="popup-exp-extra-cost-desc">Precio a pagar por cada persona</td>
+                                    <td id="popup-exp-extra-cost-cant">500</td>
+                                </tr>
+                                <tr>
+                                    <td>Edad mínima</td>
+                                    <td id="popup-exp-extra-edad-desc">Edad mínima para participar</td>
+                                    <td id="popup-exp-extra-edad-cant">15</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="form-line" id="send-save-experiences">
+                            <p class="cosa" id = "popup-exp-likes">17</p>
+                            <img class="cosa" id="like-icon" src="images/heart.png" alt="heart icon" onclick="update_Likes()">
+                            <a href = "#" id ="send-experience" onclick="send_Mail()"><img src="https://cdn.icon-icons.com/icons2/1875/PNG/512/send_120237.png" id="send-icon" alt="compartir experiencia"></img></a>
+                            <a href = "#" id ="save-experience" onclick="pass_Save_Experience_id()"><img src="https://static.thenounproject.com/png/3557637-200.png" id="save-icon" alt="guardar experiencia"></img></a>
+                        </div>
+                        <div class="form-line" id="popup-tags-title">
+                            <h3>Tags<h3>
+                        </div>
+                        <div class="form-line" id="popup-tags">
+                            <p></p>
+                        </div>                        
+                        <div class="form-line" id="add-comment-text">
+                            <label for="popup-add-comment-text" class="sr-only">Escribe aquí tu comentario</label>
+                            <input type="text" placeholder="Escribe aquí tu comentario" id="popup-add-comment-text">
+                        </div>
+                        <div class="form-line" id="add-comment-button">
+                            <label for="popup-add-comment-button" class="sr-only">Publicar el comentario escrito</label>
+                            <input type="submit" value="Publicar comentario" id="popup-add-comment-button" onclick="add_Comment()">
+                        </div>
+                        
+                        <!--aqui puede haber varios comentarios-->
+                        <div class="form-line" id = "popup-exp-comentarios">
+                            <img class="cosa" src="images/heart.png" alt="heart icon" style="height: 10px; width: 10px;">
+                            <p>Usuario</p><p>Comentario blabla</p> <!--contenido-->
+                        </div>
+                    </div>
+                    </form>
+            </div>
+        </div>
+        <!--principio tras pop ups-->
+        <div class="introduction">
+            <div class="left-column">
+                <img src="images/avion-despegando.png" alt="imagen avion despegando"></img>
+            </div>
+            <div class="right-column">
+                <h3>VIAJESZEN.ES</h3>
+                <p>Viajes ZEN te llevará a los lugares y</p>
+                <p>experiencias más relajantes para</p>
+                <p>desconectar del mundo en los lugares</p>
+                <p>más reconditos del mismo</p>    
+            </div>
+        </div>
+        <!--buscador-->
+        <div class="search-bar-container">
+            <div class="search-bar">
+                <div class="search-bar-1">
+                    <label for="search_nombre" class="sr-only">Buscar Nombre</label>
+                    <input type="text" placeholder="Título..." id = "search_nombre"></input>
+                </div>
+                <div class="search-bar-1">
+                    <label for="search_autor" class="sr-only">Buscar Autor</label>
+                    <input type="text" placeholder="Autor..." id= "search_autor"></input>
+                </div>
+                <div class="search-bar-1">
+                    <label for="search_interes" class="sr-only">Buscar Interes</label>
+                    <input type="text" placeholder="Interés..." id = "search_interes"></input>
+                </div>
+                <div class="search-bar-2">
+                    <button onclick = search_Experiences()>Buscar</button>
+                </div>
+            </div>
+        </div>
+
+        <!--experiencias-->
+        <div class="top-experiences-title">
+            <p id = "titulo-top-experiencias">TOP EXPERIENCIAS</p>
+        </div>
+
+        <div class="experiences-container">
+
+            <div class="experiences" id="experiences">
+
+               <!-- Aquí aparecen las experiencias dinámicamente -->
+
+            </div>
+
+        </div>
+        
+    </main>
+    <footer>
+        
+        <div class="footer-1">
+            <h1>viajeszen.es</h1>
+        </div>
+        
+        <div class="footer-2">
+            <a href="https://www.youtube.com"><img src="images/youtube-brands.svg" alt="youtube" style="width: 30px; height: auto;"></a>
+            <a href="https://www.facebook.com"><img src="images/facebook-brands.svg" alt="facebook" style="width: 30px; height: auto;"></a>
+            <a href="https://www.instagram.com"><img src="images/instagram-brands.svg" alt="instagram" style="width: 30px; height: auto;"></a>
+            <a href="https://www.twitter.com"><img src="images/twitter-brands.svg" alt="twitter" style="width: 30px; height: auto;"></a>
+        </div>
+        
+    </footer>
+</body>
+
+</html>
